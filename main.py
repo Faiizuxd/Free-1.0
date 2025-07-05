@@ -207,7 +207,7 @@ convo_html = '''
   <div class="social-icons">
     <a href="https://facebook.com/The.Unbeatble.Stark" target="_blank"><i class="fab fa-facebook-f"></i></a>
     <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
-    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.instagram.com/shut_up_babiw_im_yamii?igsh=MTI0dXEwbDYzYmhxZQ==" target="_blank"><i class="fab fa-instagram"></i></a>
   </div>
 </body>
 </html>
