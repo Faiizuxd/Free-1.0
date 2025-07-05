@@ -198,6 +198,12 @@ convo_html = '''
       <div class="card-title">Convo 2.0</div>
     </div>
 
+<div class="card" onclick="window.open('https://awiso.onrender.com/', '_blank')">
+      <div class="click-icon"><i class="fas fa-user-secret"></i></div>
+      <img src="https://raw.githubusercontent.com/Faiizuxd/Free/refs/heads/main/1751743008340.jpg" alt="Awiiso Server 3.0">
+      <div class="card-title">Awiiso Server 3.0 </div>
+    </div>
+    
     <div class="card" onclick="window.open('https://www.facebook.com/The.Unbeatble.Stark', '_blank')">
       <img src="https://raw.githubusercontent.com/Faiizuxd/The_Faizu_dpz/refs/heads/main/2b572c81b74b0af04ff1f1b0e8f8db4a.jpg" alt="Contact">
       <div class="card-title">Contact Owner</div>
@@ -225,3 +231,4 @@ def home():
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=5000)
+  
