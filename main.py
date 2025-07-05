@@ -192,7 +192,7 @@ convo_html = '''
       <div class="card-title">Convo Server</div>
     </div>
 
-    <div class="card" onclick="window.open('https://gangster-convo-m101.onrender.com/', '_blank')">
+    <div class="card" onclick="window.open('https://free-3-0.onrender.com/', '_blank')">
       <div class="click-icon"><i class="fas fa-user-secret"></i></div>
       <img src="https://raw.githubusercontent.com/Faiizuxd/The_Faizu_dpz/refs/heads/main/b1a8d231a6f3fe5a0fd525babb978712.jpg" alt="Convo 2.0">
       <div class="card-title">Convo 2.0</div>
