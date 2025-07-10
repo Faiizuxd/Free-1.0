@@ -1,7 +1,8 @@
-from flask import Flask, request, render_template_string, redirect
+from flask import Flask, request, render_template_string
 
 app = Flask(__name__)
 
+# Home Page with Password + Search Field
 index_html = '''
 <!DOCTYPE html>
 <html lang="en">
@@ -28,11 +29,12 @@ index_html = '''
       padding: 20px;
       border-radius: 10px;
       display: flex;
+      flex-direction: column;
       gap: 10px;
       box-shadow: 0 0 10px #000;
     }
 
-    input[type="search"] {
+    input[type="search"], input[type="password"] {
       padding: 10px 15px;
       border-radius: 5px;
       border: 1px solid #444;
@@ -65,7 +67,8 @@ index_html = '''
 <body>
 
   <form method="POST">
-    <input type="search" name="searchBox" placeholder="Type 'Convo' to search..." />
+    <input type="password" name="password" placeholder="Enter Password..." required />
+    <input type="search" name="searchBox" placeholder="Type 'Convo' to search..." required />
     <button type="submit">Search</button>
   </form>
 
@@ -77,6 +80,7 @@ index_html = '''
 </html>
 '''
 
+# Server List Page
 convo_html = '''
 <!DOCTYPE html>
 <html lang="en">
@@ -198,7 +202,7 @@ convo_html = '''
       <div class="card-title">Convo 2.0</div>
     </div>
 
-<div class="card" onclick="window.open('https://awiso.onrender.com/', '_blank')">
+    <div class="card" onclick="window.open('https://awiso.onrender.com/', '_blank')">
       <div class="click-icon"><i class="fas fa-user-secret"></i></div>
       <img src="https://raw.githubusercontent.com/Faiizuxd/Free/refs/heads/main/1751743008340.jpg" alt="Awiiso Server 3.0">
       <div class="card-title">Awiiso Server 3.0 </div>
@@ -211,24 +215,28 @@ convo_html = '''
   </div>
 
   <div class="social-icons">
-    <a href="https://facebook.com/The.Unbeatble.Stark" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://www.facebook.com/awa.so.ansarii" target="_blank"><i class="fab fa-facebook-f"></i></a>
     <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
-    <a href="https://www.instagram.com/shut_up_babiw_im_yamii?igsh=MTI0dXEwbDYzYmhxZQ==" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.instagram.com/awaisinam204?igsh=dDh2bHplczhmOGJv" target="_blank"><i class="fab fa-instagram"></i></a>
   </div>
 </body>
 </html>
 '''
 
+# Route Logic
 @app.route('/', methods=["GET", "POST"])
 def home():
     if request.method == "POST":
-        search = request.form.get("searchBox").strip().lower()
-        if search == "convo":
+        password = request.form.get("password", "").strip()
+        search = request.form.get("searchBox", "").strip().lower()
+        if password != "#Awiiso#":
+            return render_template_string(index_html, message="❌ Wrong password.")
+        elif search == "convo":
             return render_template_string(convo_html)
         else:
             return render_template_string(index_html, message="❌ Type 'Convo' to search.")
     return render_template_string(index_html)
 
+# Run
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=5000)
-  
